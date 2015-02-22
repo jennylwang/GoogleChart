@@ -536,12 +536,24 @@
       // instantiates the pie chart, passes in the data and
       // draws it.
       function drawChart() {
+      	
+      	var FREDDataArray = [];
+      	
+      	var DataObs = FREDEconData.observations; 
+      	
+      	for(var i=0; i<FREDEconData.observations.length; i++){
+      		
+      		var FREDData = [];
+      		FREDData.push(DataObs[i].date);
+      		FREDData.push(Number(DataObs[i].value));
+      		FREDDataArray.push(FREDData);
+      	}
 
         // Create the data table.
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
-        data.addRows(FREDEconData);
+        data.addRows(FREDDataArray);
 
         // Set chart options
         var options = {'title':'Economic Data Chart',
