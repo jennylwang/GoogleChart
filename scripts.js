@@ -1,5 +1,10 @@
 // Code sample from Google Charts
 
+var jwGridLines = {color: '#FF9933', count: 6};
+
+
+
+
 // Load the Visualization API and the piechart package.
       google.load('visualization', '1.0', {'packages':['corechart']});
 
@@ -31,10 +36,18 @@
 
         // Set chart options
         var options = {'title':'Economic Data Chart',
-                       'width':400,
-                       'height':300};
+                       'width':700,
+                       'height':500,
+                       'hAxis':{}, // end of hAxis 
+                       'vAxis':{} // end of vAxis
+                       }; // end of options
+                       
+         options.vAxis.gridlines = jwGridLines
+         options.hAxis.gridlines = jwGridLines
+       
+                       
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
         chart.draw(data, options);
-      }
+      } // end of drawChart
