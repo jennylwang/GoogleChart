@@ -1,3 +1,16 @@
 .JWPurple {
 	border:5px dashed #6633FF;
 }
+
+.col-md-3 {
+	color: lightgreen;
+}
+.col-md-9{
+	color: orange; 
+}
+.col-md-5{
+	color: pink; 
+}
+.col-md-7{
+	color: turquoise;
+}
